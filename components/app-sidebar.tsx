@@ -9,14 +9,15 @@ import {
   IconFileAi,
   IconFileDescription,
   IconFileWord,
-  IconFolder,
   IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
+  IconFilter,
+  IconCheck,
   IconReport,
+  IconCalendar,
   IconSearch,
   IconSettings,
-  IconUsers,
+  IconNotebook
 } from "@tabler/icons-react"
 
 import { NavDocuments } from "@/components/nav-documents"
@@ -47,24 +48,24 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
+      title: "Today",
       url: "#",
-      icon: IconListDetails,
+      icon: IconCalendar,
     },
     {
-      title: "Analytics",
+      title: "My notes",
       url: "#",
-      icon: IconChartBar,
+      icon: IconNotebook,
     },
     {
-      title: "Projects",
+      title: "Filters & Tags",
       url: "#",
-      icon: IconFolder,
+      icon: IconFilter,
     },
     {
-      title: "Team",
+      title: "Completed",
       url: "#",
-      icon: IconUsers,
+      icon: IconCheck,
     },
   ],
   navClouds: [
@@ -173,7 +174,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
