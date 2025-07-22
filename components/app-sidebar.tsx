@@ -44,27 +44,27 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
       title: "Today",
-      url: "#",
+      url: "/today",
       icon: IconCalendar,
     },
     {
       title: "My notes",
-      url: "#",
+      url: "/my-notes",
       icon: IconNotebook,
     },
     {
       title: "Filters & Tags",
-      url: "#",
+      url: "/filters-tags",
       icon: IconFilter,
     },
     {
       title: "Completed",
-      url: "#",
+      url: "/completed",
       icon: IconCheck,
     },
   ],
