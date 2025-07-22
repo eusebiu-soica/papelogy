@@ -3,23 +3,22 @@
 import * as React from "react"
 import {
   IconCamera,
-  IconChartBar,
   IconDashboard,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
   IconFileWord,
-  IconFolder,
   IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
+  IconFilter,
+  IconCheck,
   IconReport,
+  IconCalendar,
   IconSearch,
   IconSettings,
-  IconUsers,
+  IconNotebook
 } from "@tabler/icons-react"
 
-import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
@@ -33,6 +32,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "./theme-switch"
+import { NavProjects } from "./nav-projects"
+import { NavDocuments } from "./nav-documents"
 
 const data = {
   user: {
@@ -43,28 +44,28 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: IconListDetails,
+      title: "Today",
+      url: "/today",
+      icon: IconCalendar,
     },
     {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
+      title: "My notes",
+      url: "/my-notes",
+      icon: IconNotebook,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
+      title: "Filters & Tags",
+      url: "/filters-tags",
+      icon: IconFilter,
     },
     {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
+      title: "Completed",
+      url: "/completed",
+      icon: IconCheck,
     },
   ],
   navClouds: [
@@ -173,7 +174,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        {/* <NavProjects projects={data.projects} /> */}
+        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
