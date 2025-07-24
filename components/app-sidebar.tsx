@@ -198,12 +198,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const currentUserData = isSignedIn && user ? {
     name: user.fullName || user.username || user.primaryEmailAddress?.emailAddress || "Guest",
     email: user.primaryEmailAddress?.emailAddress || "",
-    avatar: user.imageUrl || "/avatars/default.jpg", // Folosește o imagine de avatar default dacă nu există
+    avatar: user.imageUrl || "/avatars/default.jpg",
+    username: user.username || "guest.user"
   } : {
-    // Date pentru utilizator neautentificat sau guest
     name: "Guest",
     email: "",
-    avatar: "/avatars/guest.jpg", // O imagine pentru utilizatori neautentificați
+    avatar: "/avatars/guest.jpg",
+    username: 'guest.user'
   };
 
   return (
