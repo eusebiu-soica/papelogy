@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const satoshi = localFont({
   src: [
@@ -39,6 +47,8 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} antialiased`}
       >
+        <ClerkProvider>
+
         <ThemeProvider
         attribute="class"
         defaultTheme="system"
@@ -46,6 +56,7 @@ export default function RootLayout({
         disableTransitionOnChange>
         {children}
         </ThemeProvider>
+          </ClerkProvider>
       </body>
     </html>
   );
