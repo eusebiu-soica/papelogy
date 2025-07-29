@@ -1,13 +1,11 @@
 // app/login/page.tsx
 import { GalleryVerticalEnd } from "lucide-react"
-import { LoginForm } from "@/components/login-form" // Nu este folosit, poți șterge importul dacă nu ai nevoie
-import Animation from "@/components/ui/animation" // Nu este folosit dacă e comentat, poți șterge importul
 import { Metadata } from "next";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: {
-    default: "Login",
+    default: "Get Started",
     template: `%s - Papelogy`,
   },
 };
@@ -23,19 +21,21 @@ export default function LoginPage() {
           Papelogy Inc.
         </a>
       </div>
-      <SignIn appearance={{
+      <SignUp appearance={{
         elements: {
           card: "shadow-none", // Remove default card shadow if you want to use your own background/styling
           // footer: "hidden", // Hide clerk default footer if you want to add your own, or just remove
         },
         layout: {
+
           unsafe_disableDevelopmentModeWarnings: true
         }
       }}
-        signUpUrl="/get-started"
         signInUrl="/sign-in"
-        afterSignInUrl={"/dashboard"}
-        afterSignUpUrl={"/dashboard"}
-        fallbackRedirectUrl="/dashboard" />
-    </div>)
+        afterSignInUrl={"/dashboard/"}
+        afterSignUpUrl={"/dashboard/"}
+
+        fallbackRedirectUrl="/dashboard/" />
+    </div>
+  )
 }

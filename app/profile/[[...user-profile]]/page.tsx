@@ -15,6 +15,7 @@ export default function UserProfilePage() {
   return (
     <div>
       <UserProfile
+       
         appearance={{
           elements: {
             card: "!w-full !h-full shadow-none",
@@ -25,6 +26,7 @@ export default function UserProfilePage() {
             unsafe_disableDevelopmentModeWarnings: true,
           },
         }}
+        
       />
     </div>
   );
