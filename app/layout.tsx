@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
+import { shadcn } from '@clerk/themes'
 
 const satoshi = localFont({
   src: [
@@ -39,13 +42,19 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} antialiased`}
       >
-        <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange>
-        {children}
-        </ThemeProvider>
+        <ClerkProvider
+          appearance={{
+            baseTheme: shadcn,
+          }}>
+
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+              {children}
+          </ThemeProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
